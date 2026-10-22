@@ -1,0 +1,13 @@
+:root {
+  /* 3 Cores Principais */
+  --cor-primaria: #FFA048; /* Laranja Âmbar Claro */
+  --cor-secundaria: #1E293B; /* Azul Grafite Escuro */
+  --cor-neutro: #F8F9FA; /* Branco Névoa */
+
+  /* 2 Fontes */
+  --fonte-principal: 'Inter', sans-serif;
+  --fonte-titulo: 'Poppins', sans-serif;
+
+  /* Tamanho Base de Texto */
+  --tamanho-base: 16px;
+} 
