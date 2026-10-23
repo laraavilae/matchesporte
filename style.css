@@ -1,13 +1,182 @@
-:root {
-  /* 3 Cores Principais */
-  --cor-primaria: #FFA048; /* Laranja Âmbar Claro */
-  --cor-secundaria: #1E293B; /* Azul Grafite Escuro */
-  --cor-neutro: #F8F9FA; /* Branco Névoa */
+/* ==========================================
+   CONFIGURAÇÕES GERAIS (Comum para os dois)
+   ========================================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333333;
+}
 
-  /* 2 Fontes */
-  --fonte-principal: 'Inter', sans-serif;
-  --fonte-titulo: 'Poppins', sans-serif;
+/* ==========================================
+   CABEÇALHO (HEADER)
+   ========================================== */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-  /* Tamanho Base de Texto */
-  --tamanho-base: 16px;
-} 
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL (MAIN E SEÇÕES)
+   ========================================== */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Seção Início (Destaque na página Home) */
+#inicio {
+    text-align: center;
+    background-color: #e2e8f0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #004080;
+}
+
+/* Seção Recursos (Artigos lado a lado) */
+#recursos {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#recursos h2 {
+    width: 100%;
+    margin-top: 0;
+}
+
+#recursos article {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    flex: 1;
+    min-width: 230px;
+    border-radius: 5px;
+}
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS DA PÁGINA DA EQUIPE
+   ========================================== */
+figure {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Estilo para os articles dentro da página de equipe */
+main > section article {
+    margin-bottom: 15px;
+}
+
+main > section article a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main > section article a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
+}
+
+/* ==========================================
+   RODAPÉ (FOOTER)
+   ========================================== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+footer nav a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    color: white;
+}
