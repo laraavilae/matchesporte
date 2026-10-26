@@ -3,72 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Meu Projeto</title>
-    <link rel ="stylesheet" href="style.css">
+    <title>MatchEsporte - Home</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header / Cabeçalho Principal -->
-    <header>
-        <div class="logo">
-            <a href="#">
-                <h1>MeuProjeto</h1>
-            </a>
-        </div>
-        <nav aria-label="Navegação Principal">
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <div class="logo">Match<span>Esporte</span></div>
+        <nav>
             <ul>
-                <li><a href="#inicio">Início</a></li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#contato" class="btn-nav">Entrar / Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main / Conteúdo Principal -->
-    <main>
-        
-        <!-- Seção 1: Hero / Boas-vindas -->
-        <section id="inicio">
-            <h2>Construa projetos incríveis de forma simples</h2>
-            <p>Sua solução completa para desenvolver, gerenciar e otimizar suas ideias no ambiente digital.</p>
-            <a href="#recursos" class="btn">Saiba Mais</a>
-        </section>
+    <!-- SEÇÃO SOBRE O PROJETO -->
+    <section id="sobre" class="about">
+        <h2>Sobre o Projeto</h2>
+        <p>Desenvolvido para revolucionar a forma como o ecossistema esportivo se conecta, oferecendo uma interface intuitiva, eficiente e voltada para resultados de alta performance.</p>
+    </section>
 
-        <!-- Seção 2: Recursos / Funcionalidades -->
-        <section id="recursos">
-            <h2>Nossos Recursos</h2>
-            <article>
-                <h3>Design Moderno</h3>
-                <p>Interface intuitiva e adaptada para todos os tipos de dispositivos.</p>
-            </article>
-            <article>
-                <h3>Desempenho Otimizado</h3>
-                <p>Carregamento rápido e código limpo utilizando as melhores práticas web.</p>
-            </article>
-            <article>
-                <h3>Suporte Dedicado</h3>
-                <p>Acompanhamento e suporte para te ajudar em cada etapa do desenvolvimento.</p>
-            </article>
-        </section>
+    <!-- SEÇÃO RECURSOS -->
+    <section id="recursos" class="features">
+        <div class="features-container">
+            <h2>O que oferecemos</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Para Atletas</h3>
+                    <p>Divulgue seu perfil, histórico e conquistas para clubes e olheiros de forma profissional.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Para Equipes</h3>
+                    <p>Encontre novos talentos com filtros avançados e agilize o processo de recrutamento.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Conexões Diretas</h3>
+                    <p>Agende avaliações e feche parcerias diretamente pela plataforma com segurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Seção 3: Sobre / Quem Somos -->
-        <section id="sobre">
-            <h2>Sobre o Projeto</h2>
-            <p>Desenvolvido para oferecer autonomia, velocidade e organização na criação de aplicações web modernas.</p>
-        </section>
-
-    </main>
-
-    <!-- Footer / Rodapé -->
-    <footer>
-        <p>&copy; 2026 MeuProjeto. Todos os direitos reservados.</p>
-        <nav aria-label="Links Rodapé">
-            <ul>
-                <li><a href="#">Termos de Uso</a></li>
-                <li><a href="#">Política de Privacidade</a></li>
-            </ul>
-        </nav>
+    <!-- RODAPÉ -->
+    <footer id="contato" class="footer">
+        <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
     </footer>
 
 </body>
