@@ -1,182 +1,275 @@
-/* ==========================================
-   CONFIGURAÇÕES GERAIS (Comum para os dois)
-   ========================================== */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333333;
+/* VARIÁVEIS DE CORES DA SUA PALETA */
+:root {
+    /* Cores Principais */
+    --primary: #FFA048;       /* Laranja Âmbar Claro */
+    --secondary: #1E293B;     /* Azul Grafite Escuro */
+
+    /* 5 Neutros */
+    --neutral-1: #F8F9FA;     /* Branco Névoa */
+    --neutral-2: #FFFFFF;     /* Branco Puro */
+    --neutral-3: #E9ECEF;     /* Cinza Claro */
+    --neutral-4: #6C757D;     /* Cinza Médio */
+    --neutral-5: #1E293B;     /* Azul Grafite Escuro */
+
+    /* Cores Semânticas */
+    --success: #2EC4B6;       /* Verde Esmeralda */
+    --warning: #FFB703;       /* Amarelo Âmbar */
+    --error: #E63946;         /* Vermelho Coral */
+    --info: #3A86EF;          /* Azul Informativo */
 }
 
-/* ==========================================
-   CABEÇALHO (HEADER)
-   ========================================== */
-header {
-    background-color: #0056b3;
-    color: white;
-    padding: 20px;
+/* RESET E CONFIGURAÇÕES GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--neutral-1);
+    color: var(--neutral-5);
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.8rem;
-}
-
-.logo a {
-    color: white;
-    text-decoration: none;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-}
-
-header nav a {
-    color: white;
-    text-decoration: none;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-/* ==========================================
-   CONTEÚDO PRINCIPAL (MAIN E SEÇÕES)
-   ========================================== */
-main {
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-section {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-/* Seção Início (Destaque na página Home) */
-#inicio {
-    text-align: center;
-    background-color: #e2e8f0;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #0056b3;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.btn:hover {
-    background-color: #004080;
-}
-
-/* Seção Recursos (Artigos lado a lado) */
-#recursos {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-#recursos h2 {
+    padding: 20px 8%;
+    background-color: var(--neutral-2);
+    position: fixed;
+    top: 0;
     width: 100%;
-    margin-top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--neutral-3);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-#recursos article {
-    background: #f9f9f9;
-    padding: 15px;
-    border: 1px solid #ddd;
-    flex: 1;
-    min-width: 230px;
-    border-radius: 5px;
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--neutral-5);
 }
 
-/* ==========================================
-   ESTILOS ESPECÍFICOS DA PÁGINA DA EQUIPE
-   ========================================== */
-figure {
-    text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
+.logo span {
+    color: var(--primary);
 }
 
-figure img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-figcaption {
-    margin-top: 10px;
-    font-style: italic;
-    color: #666;
-}
-
-/* Estilo para os articles dentro da página de equipe */
-main > section article {
-    margin-bottom: 15px;
-}
-
-main > section article a {
-    color: #0056b3;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-main > section article a:hover {
-    text-decoration: underline;
-}
-
-hr {
-    border: 0;
-    height: 1px;
-    background-color: #ddd;
-    margin: 15px 0;
-}
-
-/* ==========================================
-   RODAPÉ (FOOTER)
-   ========================================== */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
-
-footer nav ul {
+.navbar nav ul {
+    display: flex;
     list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: var(--neutral-4);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: var(--primary);
+}
+
+.btn-nav {
+    background-color: var(--primary) !important;
+    color: var(--neutral-2) !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600 !important;
+    transition: opacity 0.3s;
+}
+
+.btn-nav:hover {
+    opacity: 0.9;
+}
+
+/* SEÇÃO HERO */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background-color: var(--neutral-2);
+    margin-top: 70px;
+    border-bottom: 1px solid var(--neutral-3);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--neutral-5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--neutral-4);
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
     display: flex;
     justify-content: center;
     gap: 15px;
-    padding: 0;
-    margin-top: 10px;
 }
 
-footer nav a {
-    color: #ccc;
+.btn-primary, .btn-secondary {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-footer nav a:hover {
-    color: white;
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--neutral-2);
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--neutral-5);
+    border: 2px solid var(--neutral-3);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* SOBRE O PROJETO */
+.about {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: var(--neutral-2);
+}
+
+.about h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--neutral-5);
+}
+
+.about p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--neutral-4);
+    font-size: 1.1rem;
+}
+
+/* SEÇÃO DA EQUIPE */
+.team-section {
+    padding: 100px 10%;
+    background-color: var(--neutral-1);
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-header h2 {
+    font-size: 2.5rem;
+    color: var(--neutral-5);
+    margin-bottom: 10px;
+}
+
+.team-header p {
+    color: var(--neutral-4);
+}
+
+.team-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.team-photo-wrapper {
+    text-align: center;
+}
+
+.team-photo-wrapper img {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(30, 41, 59, 0.08);
+    border: 3px solid var(--neutral-3);
+    max-width: 100%;
+    height: auto;
+}
+
+.team-photo-wrapper figcaption {
+    margin-top: 10px;
+    color: var(--neutral-4);
+    font-size: 0.9rem;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.member-card {
+    background-color: var(--neutral-2);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--neutral-3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.member-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--neutral-5);
+}
+
+.member-role {
+    color: var(--neutral-4);
+    margin-bottom: 15px;
+}
+
+.instagram-link {
+    display: inline-block;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.instagram-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* RODAPÉ */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--secondary);
+    color: var(--neutral-3);
+    font-size: 0.9rem;
 }
