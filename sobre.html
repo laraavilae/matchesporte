@@ -3,61 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MatchEsporte - Home</title>
+    <title>MatchEsporte - Apresentação Formal</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- CABEÇALHO / NAVBAR -->
     <header class="navbar">
-        <div class="logo">Match<span>Esporte</span></div>
-        <nav>
+        <a href="home.html" class="logo-brand">
+            <!-- Logo Oficial SVG baseada no protótipo -->
+            <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" rx="24" fill="url(#logo-grad)"/>
+                <path d="M52 20L28 54H48L44 80L72 44H52L52 20Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFA048"/>
+                        <stop offset="1" stop-color="#FF6B00"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="logo">Match<span>Esporte</span></div>
+        </a>
+
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
             <ul>
                 <li><a href="home.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="sobre.html" class="active">Sobre o App</a></li>
                 <li><a href="#equipe">A Equipe</a></li>
                 <li><a href="#contato" class="btn-nav">Contato</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- APRESENTAÇÃO FORMAL HERO -->
+    <section class="about-page-hero">
+        <span class="badge">Apresentação Institucional</span>
+        <h1>MatchEsporte: O Futuro do Recrutamento Esportivo</h1>
+        <p>Desenvolvido para revolucionar a forma como o ecossistema esportivo se conecta, oferecendo uma interface intuitiva, eficiente e voltada para resultados de alta performance.</p>
+        
+        <!-- Métricas/Estatísticas do Projeto -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Perfil Profissional</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Direct</div>
+                <div class="stat-label">Conexão Atleta-Clube</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Mobile</div>
+                <div class="stat-label">Nativo & Responsivo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALHES E PILARES DO PROJETO -->
+    <section class="about-details">
+        <div class="about-grid">
+            <div class="about-box">
+                <h3>🎯 Nossa Missão</h3>
+                <p>Democratizar o acesso às oportunidades no esporte profissional e amador, permitindo que talentos de qualquer região sejam visualizados por olheiros e clubes sem barreiras geográficas.</p>
+            </div>
+            <div class="about-box">
+                <h3>🚀 Nossa Visão</h3>
+                <p>Tornar-se a principal plataforma de inteligência e recrutamento esportivo do mercado, promovendo conexões transparentes e impulsionando a carreira de novos atletas.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- SEÇÃO SOBRE A EQUIPE -->
     <section id="equipe" class="team-section">
         <div class="team-container">
             <header class="team-header">
-                <h2>Sobre a Equipe</h2>
+                <h2>Desenvolvedores & Criadores</h2>
                 <p>Conhecem o projeto de perto e fazem acontecer.</p>
             </header>
 
             <main class="team-main">
                 <!-- Foto do Grupo/Equipe -->
                 <figure class="team-photo-wrapper">
-                    <img src="equipe.jpeg" alt="Foto oficial da equipe" width="400">
-                    <figcaption>Foto oficial da equipe</figcaption>
+                    <img src="equipe.jpeg" alt="Foto oficial da equipe">
+                    <figcaption>Foto oficial da equipe MatchEsporte</figcaption>
                 </figure>
 
                 <div class="members-grid">
                     <!-- Integrante 1 -->
                     <article class="member-card">
+                        <div class="member-avatar">LA</div>
                         <h3>Lara Ávila</h3>
                         <p class="member-role"><strong>Habilidade:</strong> Atleta</p>
-                        <a href="https://www.instagram.com/lara_eae__/" target="_blank" rel="noopener noreferrer" class="instagram-link">Instagram</a>
+                        <a href="https://www.instagram.com/lara_eae__/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                            Instagram
+                        </a>
                     </article>
 
                     <!-- Integrante 2 -->
                     <article class="member-card">
+                        <div class="member-avatar">SG</div>
                         <h3>Sophia Gagno</h3>
                         <p class="member-role"><strong>Habilidade:</strong> Criativa</p>
-                        <a href="https://www.instagram.com/sophigagnoo__/" target="_blank" rel="noopener noreferrer" class="instagram-link">Instagram</a>
+                        <a href="https://www.instagram.com/sophigagnoo__/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                            Instagram
+                        </a>
                     </article>
 
                     <!-- Integrante 3 -->
                     <article class="member-card">
+                        <div class="member-avatar">JP</div>
                         <h3>João Pedro</h3>
                         <p class="member-role"><strong>Habilidade:</strong> Proativo</p>
-                        <a href="https://www.instagram.com/_.aguiarx_/" target="_blank" rel="noopener noreferrer" class="instagram-link">Instagram</a>
+                        <a href="https://www.instagram.com/_.aguiarx_/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                            Instagram
+                        </a>
                     </article>
                 </div>
             </main>
@@ -69,5 +135,13 @@
         <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
     </footer>
 
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
