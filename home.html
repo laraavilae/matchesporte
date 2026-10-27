@@ -5,28 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MatchEsporte - Home</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- CABEÇALHO / NAVBAR -->
     <header class="navbar">
-        <div class="logo">Match<span>Esporte</span></div>
-        <nav>
+        <a href="home.html" class="logo-brand">
+            <!-- Logo Oficial SVG baseada no protótipo -->
+            <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" rx="24" fill="url(#logo-grad)"/>
+                <path d="M52 20L28 54H48L44 80L72 44H52L52 20Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFA048"/>
+                        <stop offset="1" stop-color="#FF6B00"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="logo">Match<span>Esporte</span></div>
+        </a>
+        
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
             <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="home.html" class="active">Início</a></li>
+                <li><a href="sobre.html">Sobre o App</a></li>
                 <li><a href="#recursos">Recursos</a></li>
                 <li><a href="#contato" class="btn-nav">Entrar / Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- SEÇÃO SOBRE O PROJETO -->
-    <section id="sobre" class="about">
-        <h2>Sobre o Projeto</h2>
-        <p>Desenvolvido para revolucionar a forma como o ecossistema esportivo se conecta, oferecendo uma interface intuitiva, eficiente e voltada para resultados de alta performance.</p>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge">⚡ Conexão Esportiva Inteligente</span>
+            <h1>Acelere sua carreira no esporte</h1>
+            <p>A ponte definitiva entre atletas em ascensão, olheiros e clubes esportivos através de tecnologia de ponta.</p>
+            <div class="hero-buttons">
+                <a href="#recursos" class="btn-primary">Explorar Recursos</a>
+                <a href="sobre.html" class="btn-secondary">Apresentação Formal</a>
+            </div>
+        </div>
     </section>
 
     <!-- SEÇÃO RECURSOS -->
@@ -35,14 +62,17 @@
             <h2>O que oferecemos</h2>
             <div class="features-grid">
                 <div class="feature-card">
+                    <div class="feature-icon">🏃</div>
                     <h3>Para Atletas</h3>
                     <p>Divulgue seu perfil, histórico e conquistas para clubes e olheiros de forma profissional.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">⚽</div>
                     <h3>Para Equipes</h3>
                     <p>Encontre novos talentos com filtros avançados e agilize o processo de recrutamento.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
                     <h3>Conexões Diretas</h3>
                     <p>Agende avaliações e feche parcerias diretamente pela plataforma com segurança.</p>
                 </div>
@@ -55,5 +85,13 @@
         <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
     </footer>
 
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
