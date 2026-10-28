@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchEsporte - Jogadores e Atletas</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <a href="home.html" class="logo-brand">
+            <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" rx="24" fill="url(#logo-grad)"/>
+                <path d="M52 20L28 54H48L44 80L72 44H52L52 20Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFA048"/>
+                        <stop offset="1" stop-color="#FF6B00"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="logo">Match<span>Esporte</span></div>
+        </a>
+        
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="jogadores.html" class="active">Jogadores</a></li>
+                <li><a href="equipes.html">Equipes</a></li>
+                <li><a href="conexoes.html">Conexões</a></li>
+                <li><a href="sobre.html">Sobre o App</a></li>
+                <li><a href="conexoes.html" class="btn-nav">Conectar-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL: JOGADORES -->
+    <main class="main-content-page">
+        <section class="page-header-section">
+            <span class="badge">Talentos em Destaque</span>
+            <h1>Atletas Prontos para o Mercado</h1>
+            <p>Descubra promessas do esporte com perfis verificados, histórico de desempenho e estatísticas em tempo real.</p>
+        </section>
+
+        <!-- Filtros de Pesquisa -->
+        <div class="filter-bar">
+            <input type="text" placeholder="Pesquisar por nome, esporte ou posição..." class="search-input">
+            <select class="filter-select">
+                <option value="">Todas as Modalidades</option>
+                <option value="futebol">Futebol</option>
+                <option value="basquete">Basquete</option>
+                <option value="volei">Vôlei</option>
+            </select>
+        </div>
+
+        <!-- Grid de Jogadores -->
+        <div class="directory-grid">
+            <!-- Atleta 1 -->
+            <article class="directory-card">
+                <div class="card-top-info">
+                    <span class="status-badge active-status">Disponível</span>
+                    <span class="sport-tag">Futebol</span>
+                </div>
+                <div class="profile-avatar-placeholder">⚽</div>
+                <h3>Matheus Silva</h3>
+                <p class="profile-subtitle">Atacante (Centroavante) • 19 anos</p>
+                <div class="profile-stats">
+                    <div><span>Altura:</span> 1.82m</div>
+                    <div><span>Pé Bom:</span> Destro</div>
+                    <div><span>Cidade:</span> Vitória, ES</div>
+                </div>
+                <a href="conexoes.html" class="btn-primary btn-full">Solicitar Conexão</a>
+            </article>
+
+            <!-- Atleta 2 -->
+            <article class="directory-card">
+                <div class="card-top-info">
+                    <span class="status-badge active-status">Disponível</span>
+                    <span class="sport-tag">Basquete</span>
+                </div>
+                <div class="profile-avatar-placeholder">🏀</div>
+                <h3>Lucas Gabriel</h3>
+                <p class="profile-subtitle">Armador (Point Guard) • 21 anos</p>
+                <div class="profile-stats">
+                    <div><span>Altura:</span> 1.90m</div>
+                    <div><span>Envergadura:</span> 2.02m</div>
+                    <div><span>Cidade:</span> Vila Velha, ES</div>
+                </div>
+                <a href="conexoes.html" class="btn-primary btn-full">Solicitar Conexão</a>
+            </article>
+
+            <!-- Atleta 3 -->
+            <article class="directory-card">
+                <div class="card-top-info">
+                    <span class="status-badge active-status">Em Avaliação</span>
+                    <span class="sport-tag">Vôlei</span>
+                </div>
+                <div class="profile-avatar-placeholder">🏐</div>
+                <h3>Carlos Eduardo</h3>
+                <p class="profile-subtitle">Ponteiro / Oposto • 20 anos</p>
+                <div class="profile-stats">
+                    <div><span>Alcance:</span> 3.35m</div>
+                    <div><span>Bloqueio:</span> 3.15m</div>
+                    <div><span>Cidade:</span> Serra, ES</div>
+                </div>
+                <a href="conexoes.html" class="btn-primary btn-full">Solicitar Conexão</a>
+            </article>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        menuBtn.addEventListener('click', () => { navMenu.classList.toggle('active'); });
+    </script>
+</body>
+</html>
