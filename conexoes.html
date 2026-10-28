@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchEsporte - Conexões Diretas</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <a href="home.html" class="logo-brand">
+            <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" rx="24" fill="url(#logo-grad)"/>
+                <path d="M52 20L28 54H48L44 80L72 44H52L52 20Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFA048"/>
+                        <stop offset="1" stop-color="#FF6B00"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="logo">Match<span>Esporte</span></div>
+        </a>
+        
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="jogadores.html">Jogadores</a></li>
+                <li><a href="equipes.html">Equipes</a></li>
+                <li><a href="conexoes.html" class="active">Conexões</a></li>
+                <li><a href="sobre.html">Sobre o App</a></li>
+                <li><a href="conexoes.html" class="btn-nav">Conectar-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL: CONEXÕES DIRETAS -->
+    <main class="main-content-page">
+        <section class="page-header-section">
+            <span class="badge">Match & Chat Direto</span>
+            <h1>Central de Conexões Diretas</h1>
+            <p>Estabeleça contato direto com clubes ou atletas interessados. Envie sua proposta, histórico esportivo ou agende uma avaliação técnica.</p>
+        </section>
+
+        <div class="connection-container">
+            <div class="connection-card-form">
+                <h2>Iniciar Nova Conexão</h2>
+                <form onsubmit="event.preventDefault(); alert('Solicitação enviada com sucesso! O clube ou atleta responderá em breve.');">
+                    <div class="form-group">
+                        <label for="seu-nome">Seu Nome / Nome da Equipe</label>
+                        <input type="text" id="seu-nome" placeholder="Ex: Matheus Silva" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo-perfil">Você é:</label>
+                        <select id="tipo-perfil" class="filter-select" required>
+                            <option value="atleta">Atleta / Jogador</option>
+                            <option value="clube">Clube / Olheiro / Equipe</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destinatario">Destinatário (Quem você quer contatar)</label>
+                        <input type="text" id="destinatario" placeholder="Ex: Desportiva Ferroviária ou Atleta específico" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem / Proposta de Avaliação</label>
+                        <textarea id="mensagem" rows="5" placeholder="Descreva sua experiência, posições ou o objetivo da conexão..." class="search-input" required style="resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full">Enviar Mensagem Direta 🚀</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        menuBtn.addEventListener('click', () => { navMenu.classList.toggle('active'); });
+    </script>
+</body>
+</html>
