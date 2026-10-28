@@ -13,7 +13,6 @@
     <!-- CABEÇALHO / NAVBAR -->
     <header class="navbar">
         <a href="home.html" class="logo-brand">
-            <!-- Logo Oficial SVG baseada no protótipo -->
             <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="100" height="100" rx="24" fill="url(#logo-grad)"/>
                 <path d="M52 20L28 54H48L44 80L72 44H52L52 20Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -36,9 +35,12 @@
         <nav id="nav-menu">
             <ul>
                 <li><a href="home.html" class="active">Início</a></li>
+                <li><a href="jogadores.html">Jogadores</a></li>
+                <li><a href="equipes.html">Equipes</a></li>
+                <li><a href="conexoes.html">Conexões</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobre.html">Sobre o App</a></li>
-                <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#contato" class="btn-nav">Entrar / Contato</a></li>
+                <li><a href="contato.html" class="btn-nav">Entrar / Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -51,38 +53,43 @@
             <p>A ponte definitiva entre atletas em ascensão, olheiros e clubes esportivos através de tecnologia de ponta.</p>
             <div class="hero-buttons">
                 <a href="#recursos" class="btn-primary">Explorar Recursos</a>
-                <a href="sobre.html" class="btn-secondary">Apresentação Formal</a>
+                <a href="contato.html" class="btn-secondary">Fale Conosco</a>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO RECURSOS -->
+    <!-- SEÇÃO RECURSOS (Com links interativos direcionando para as páginas) -->
     <section id="recursos" class="features">
         <div class="features-container">
             <h2>O que oferecemos</h2>
             <div class="features-grid">
-                <div class="feature-card">
+                <!-- Card para Atletas -> Vai para jogadores.html -->
+                <a href="jogadores.html" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
                     <div class="feature-icon">🏃</div>
                     <h3>Para Atletas</h3>
-                    <p>Divulgue seu perfil, histórico e conquistas para clubes e olheiros de forma profissional.</p>
-                </div>
-                <div class="feature-card">
+                    <p>Divulgue seu perfil, histórico e conquistas para clubes e olheiros de forma profissional. <strong>Clique para ver &rarr;</strong></p>
+                </a>
+
+                <!-- Card para Equipes -> Vai para equipes.html -->
+                <a href="equipes.html" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
                     <div class="feature-icon">⚽</div>
                     <h3>Para Equipes</h3>
-                    <p>Encontre novos talentos com filtros avançados e agilize o processo de recrutamento.</p>
-                </div>
-                <div class="feature-card">
+                    <p>Encontre novos talentos com filtros avançados e agilize o processo de recrutamento. <strong>Clique para ver &rarr;</strong></p>
+                </a>
+
+                <!-- Card para Conexões Diretas -> Vai para conexoes.html -->
+                <a href="conexoes.html" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
                     <div class="feature-icon">🤝</div>
                     <h3>Conexões Diretas</h3>
-                    <p>Agende avaliações e feche parcerias diretamente pela plataforma com segurança.</p>
-                </div>
+                    <p>Agende avaliações e feche parcerias diretamente pela plataforma com segurança. <strong>Clique para ver &rarr;</strong></p>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- RODAPÉ -->
     <footer id="contato" class="footer">
-        <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
+        <p>&copy; 2026 MatchEsporte. Todos os direitos reservados. | <a href="suporte.html" style="color: var(--primary); text-decoration: none;">Central de Suporte</a></p>
     </footer>
 
     <script>
