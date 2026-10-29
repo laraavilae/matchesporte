@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchEsporte - Central de Suporte</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <a href="home.html" class="logo-brand">
+            <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" rx="24" fill="url(#logo-grad)"/>
+                <path d="M52 20L28 54H48L44 80L72 44H52L52 20Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFA048"/>
+                        <stop offset="1" stop-color="#FF6B00"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="logo">Match<span>Esporte</span></div>
+        </a>
+        
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="jogadores.html">Jogadores</a></li>
+                <li><a href="equipes.html">Equipes</a></li>
+                <li><a href="conexoes.html">Conexões</a></li>
+                <li><a href="suporte.html" class="active">Suporte</a></li>
+                <li><a href="sobre.html">Sobre o App</a></li>
+                <li><a href="contato.html" class="btn-nav">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL: SUPORTE -->
+    <main class="main-content-page">
+        <section class="page-header-section">
+            <span class="badge">Ajuda & FAQ</span>
+            <h1>Central de Suporte MatchEsporte</h1>
+            <p>Encontre respostas rápidas para dúvidas frequentes ou abra um chamado técnico com nossa equipe de suporte.</p>
+        </section>
+
+        <div class="about-grid" style="max-width: 900px; margin: 0 auto 50px;">
+            <div class="about-box">
+                <h3>❓ Como criar meu perfil de atleta?</h3>
+                <p>Acesse a seção de <a href="jogadores.html" style="color: var(--primary);">Jogadores</a>, preencha suas informações desportivas e utilize a aba de <a href="conexoes.html" style="color: var(--primary);">Conexões</a> para enviar seus dados aos clubes.</p>
+            </div>
+            <div class="about-box">
+                <h3>🛡️ As equipes são verificadas?</h3>
+                <p>Sim! Todos os clubes e olheiros cadastrados passam por uma validação interna para garantir segurança total aos atletas da plataforma.</p>
+            </div>
+        </div>
+
+        <div class="connection-container">
+            <div class="connection-card-form">
+                <h2>Abrir Chamado de Suporte</h2>
+                <form onsubmit="event.preventDefault(); alert('Chamado aberto com sucesso! Nosso suporte responderá via e-mail em até 24h.');">
+                    <div class="form-group">
+                        <label for="nome-sup">Seu Nome</label>
+                        <input type="text" id="nome-sup" placeholder="Seu nome" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-sup">Seu E-mail de Contato</label>
+                        <input type="email" id="email-sup" placeholder="seu@email.com" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="problema">Descreva o seu problema ou dúvida técnica</label>
+                        <textarea id="problema" rows="4" placeholder="Explique detalhadamente o que ocorreu..." class="search-input" required style="resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full">Enviar Solicitação de Suporte 🔧</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        menuBtn.addEventListener('click', () => { navMenu.classList.toggle('active'); });
+    </script>
+</body>
+</html>
