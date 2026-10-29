@@ -54,8 +54,8 @@
 
         <!-- Filtros de Pesquisa -->
         <div class="filter-bar">
-            <input type="text" placeholder="Pesquisar por nome, esporte ou posição..." class="search-input">
-            <select class="filter-select">
+            <input type="text" id="searchInput" placeholder="Pesquisar por nome, esporte ou posição..." class="search-input">
+            <select id="sportSelect" class="filter-select">
                 <option value="">Todas as Modalidades</option>
                 <option value="futebol">Futebol</option>
                 <option value="basquete">Basquete</option>
@@ -64,9 +64,9 @@
         </div>
 
         <!-- Grid de Jogadores -->
-        <div class="directory-grid">
+        <div class="directory-grid" id="playersGrid">
             <!-- Atleta 1 -->
-            <article class="directory-card">
+            <article class="directory-card" data-sport="futebol" data-text="matheus silva futebol atacante centroavante">
                 <div class="card-top-info">
                     <span class="status-badge active-status">Disponível</span>
                     <span class="sport-tag">Futebol</span>
@@ -83,7 +83,7 @@
             </article>
 
             <!-- Atleta 2 -->
-            <article class="directory-card">
+            <article class="directory-card" data-sport="basquete" data-text="lucas gabriel basquete armador point guard">
                 <div class="card-top-info">
                     <span class="status-badge active-status">Disponível</span>
                     <span class="sport-tag">Basquete</span>
@@ -100,7 +100,7 @@
             </article>
 
             <!-- Atleta 3 -->
-            <article class="directory-card">
+            <article class="directory-card" data-sport="volei" data-text="carlos eduardo vôlei ponteiro oposto">
                 <div class="card-top-info">
                     <span class="status-badge active-status">Em Avaliação</span>
                     <span class="sport-tag">Vôlei</span>
@@ -127,6 +127,33 @@
         const menuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
         menuBtn.addEventListener('click', () => { navMenu.classList.toggle('active'); });
+
+        // Script de Filtro por Pesquisa e Select
+        const searchInput = document.getElementById('searchInput');
+        const sportSelect = document.getElementById('sportSelect');
+        const cards = document.querySelectorAll('.directory-card');
+
+        function filterPlayers() {
+            const query = searchInput.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            const selectedSport = sportSelect.value.toLowerCase();
+
+            cards.forEach(card => {
+                const text = card.getAttribute('data-text').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                const sport = card.getAttribute('data-sport');
+
+                const matchesSearch = text.includes(query);
+                const matchesSelect = selectedSport === "" || sport === selectedSport;
+
+                if (matchesSearch && matchesSelect) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterPlayers);
+        sportSelect.addEventListener('change', filterPlayers);
     </script>
 </body>
 </html>
