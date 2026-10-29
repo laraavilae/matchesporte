@@ -7,6 +7,20 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo para garantir que placeholders longos ajustem e coloquem reticências no mobile */
+        .search-input {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        /* Para telas maiores permitir quebra se necessário, mas no mobile previne corte feio */
+        @media (max-width: 600px) {
+            .search-input::placeholder {
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -71,12 +85,13 @@
 
                     <div class="form-group">
                         <label for="destinatario">Destinatário (Quem você quer contatar)</label>
-                        <input type="text" id="destinatario" placeholder="Ex: Desportiva Ferroviária ou Atleta específico" required class="search-input">
+                        <!-- Exemplo otimizado e curto com reticências automáticas para não estourar no mobile -->
+                        <input type="text" id="destinatario" placeholder="Ex: Desp. Ferroviária..." required class="search-input">
                     </div>
 
                     <div class="form-group">
                         <label for="mensagem">Mensagem / Proposta de Avaliação</label>
-                        <textarea id="mensagem" rows="5" placeholder="Descreva sua experiência, posições ou o objetivo da conexão..." class="search-input" required style="resize: vertical;"></textarea>
+                        <textarea id="mensagem" rows="5" placeholder="Descreva sua experiência, posições ou o objetivo..." class="search-input" required style="resize: vertical;"></textarea>
                     </div>
 
                     <button type="submit" class="btn-primary btn-full">Enviar Mensagem Direta 🚀</button>
