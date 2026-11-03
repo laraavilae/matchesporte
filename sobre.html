@@ -25,19 +25,22 @@
             </svg>
             <div class="logo">Match<span>Esporte</span></div>
         </a>
-
+        
         <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <nav id="nav-menu">
+         <nav id="nav-menu">
             <ul>
-                <li><a href="home.html">Início</a></li>
-                <li><a href="sobre.html" class="active">Sobre o App</a></li>
-                <li><a href="#equipe">A Equipe</a></li>
-                <li><a href="#contato" class="btn-nav">Contato</a></li>
+                <li><a href="home.html" class="active">Início</a></li>
+                <li><a href="jogadores.html">Jogadores</a></li>
+                <li><a href="equipes.html">Equipes</a></li>
+                <li><a href="conexoes.html">Conexões</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
+                <li><a href="sobre.html">Sobre o App</a></li>
+                <li><a href="contato.html" class="btn-nav">Entrar / Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -91,7 +94,7 @@
                     <!-- Integrante 1: Lara (Foto com celular branco) -->
                     <article class="member-card">
                         <div class="member-avatar-img">
-                            <img src="image_76ea02.jpg" alt="Lara Ávila" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                            <img src="lara.jpg" alt="Lara Ávila" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
                         </div>
                         <h3>Lara Ávila</h3>
                         <p class="member-role"><strong>Habilidade:</strong> Atleta</p>
@@ -103,7 +106,7 @@
                     <!-- Integrante 2: Sophia -->
                     <article class="member-card">
                         <div class="member-avatar-img">
-                            <img src="image_76ea1f.jpg" alt="Sophia Gagno" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                            <img src="sophia.jpg" alt="Sophia Gagno" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
                         </div>
                         <h3>Sophia Gagno</h3>
                         <p class="member-role"><strong>Habilidade:</strong> Criativa</p>
@@ -115,7 +118,7 @@
                     <!-- Integrante 3: João Pedro -->
                     <article class="member-card">
                         <div class="member-avatar-img">
-                            <img src="image_76ecc9.jpg" alt="João Pedro" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                            <img src="joao.jpg" alt="João Pedro" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
                         </div>
                         <h3>João Pedro</h3>
                         <p class="member-role"><strong>Habilidade:</strong> Proativo</p>
@@ -133,13 +136,11 @@
         <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const navMenu = document.getElementById('nav-menu');
+    <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 
-        menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
