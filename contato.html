@@ -32,15 +32,15 @@
             <span></span>
         </button>
 
-        <nav id="nav-menu">
+         <nav id="nav-menu">
             <ul>
-                <li><a href="home.html">Início</a></li>
+                <li><a href="home.html" class="active">Início</a></li>
                 <li><a href="jogadores.html">Jogadores</a></li>
                 <li><a href="equipes.html">Equipes</a></li>
                 <li><a href="conexoes.html">Conexões</a></li>
                 <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobre.html">Sobre o App</a></li>
-                <li><a href="contato.html" class="active btn-nav">Contato</a></li>
+                <li><a href="contato.html" class="btn-nav">Entrar / Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -93,10 +93,11 @@
         <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const navMenu = document.getElementById('nav-menu');
-        menuBtn.addEventListener('click', () => { navMenu.classList.toggle('active'); });
-    </script>
+<button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
 </body>
 </html>
