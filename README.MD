@@ -1,48 +1,53 @@
-MatchEsporte
+<!-- ===== README.md — na raiz do repositório, com esse nome exato ===== -->
 
-Plataforma inteligente que conecta atletas em ascensão, olheiros e clubes esportivos de forma rápida e direta.
+# MatchEsporte
 
-O problema que resolve:
-Quem acabou de mudar de região ou busca novas oportunidades no meio esportivo frequentemente perde muito tempo procurando partidas abertas, equipes com vagas ou canais de comunicação com olheiros. Grupos de mensagens informais são desorganizados e dificultam a visibilidade de atletas talentosos.
+Plataforma que conecta quem pratica esporte e mora perto, para montar partidas e interagir sem depender de grupos de mensagens.
 
-O MatchEsporte resolve essa dor ao centralizar perfis de atletas verificados, listagens de clubes com vagas abertas e ferramentas de conexão direta em um só lugar. A plataforma otimiza o recrutamento e permite que atletas e equipes interajam com transparência, agilidade e sem barreiras geográficas.
+![Tela principal do MatchEsporte](imagens/home.png)
 
-Telas
+## O problema
 
-Home (home.html): Página principal de boas-vindas com visão geral da plataforma e atalhos para os principais recursos.
-Jogadores (jogadores.html): Diretório com perfis de atletas cadastrados, acompanhados de filtros por modalidade e estatísticas.
-Equipes (equipes.html): Listagem de clubes, centros de treinamento e equipes esportivas que buscam novos talentos.
-Conexões (conexoes.html): Central de mensagens e envio de propostas de avaliação direta entre atletas e clubes.
-Suporte (suporte.html): Manual do usuário integrado ao site, contendo perguntas frequentes estruturadas em acordeões (<details>) com passo a passo numerado.
-Sobre o App (sobre.html): Apresentação institucional com a missão, visão e a equipe de desenvolvedores por trás do projeto.
-Contato (contato.html): Canal de atendimento oficial para envio de dúvidas, sugestões e propostas institucionais.
+Quem acabou de mudar de bairro, ou quer encontrar novos parceiros de esporte, perde tempo procurando pessoas com horários compatíveis. O MatchEsporte centraliza as oportunidades da região, mostrando modalidades, locais e vagas abertas.
 
-Tecnologias
-HTML5: Estruturação semântica e acessível de todas as páginas da aplicação.
-CSS3: Estilização avançada com Flexbox, Grid Layout, variáveis nativas e design responsivo fluido (style.css).
-Git e GitHub: Controle de versão do código-fonte e hospedagem do repositório.
+## Telas
 
-Como rodar
-Siga o passo a passo abaixo para executar o projeto na sua máquina:
-Clone o repositório:
-git clone https://github.com/SEU-USUARIO/matchesporte.git
+| Tela | O que faz |
+|---|---|
+| Início (home.html) | Apresenta a plataforma e dá acesso rápido aos recursos principais |
+| Jogadores (jogadores.html) | Lista os atletas cadastrados com filtros por modalidade e nível |
+| Equipes (equipes.html) | Mostra clubes e centros esportivos que buscam novos talentos |
+| Conexões (conexoes.html) | Central de mensagens e envio de propostas de avaliação direta |
+| Suporte (suporte.html) | Central de ajuda com o passo a passo de uso de cada tela |
+| Sobre o App (sobre.html) | Apresenta os pilares do projeto e os desenvolvedores |
+| Contato (contato.html) | Canal de atendimento e envio de mensagens institucionais |
 
+## Tecnologias
 
-Abra a pasta do projeto:
-Navegue até o diretório clonado matchesporte-main.
+- HTML5 semântico
+- CSS3 (Flexbox, variáveis e design responsivo)
+- JavaScript
 
-Inicie a aplicação:
-Dê um clique duplo no arquivo home.html para abri-lo diretamente no seu navegador, ou utilize a extensão Live Server no Visual Studio Code para rodá-lo em um servidor local.
-(Nota: O projeto é inteiramente front-end, portanto não requer instalação de dependências ou servidores de backend).
+## Como rodar
 
-Quem fez o quê
-Lara Ávila: Desenvolvimento do diretório de atletas (jogadores.html), listagens de perfis e suporte.
-Sophia Gagno: Criação da identidade visual, páginas institucionais (sobre.html), estilização em CSS e layout responsivo.
-João Pedro: Desenvolvimento das telas de conexões (conexoes.html), formulários de atendimento e integração do sistema.
+1. Clone o repositório:
+   `git clone https://github.com/usuario/matchesporte.git`
+2. Entre na pasta: `cd matchesporte`
+3. Abra o arquivo `home.html` no navegador, ou use a extensão Live Server do VS Code.
 
-Status
-[x] Estrutura e navegação entre todas as 7 páginas do projeto totalmente funcionais e integradas.
-[x] Design responsivo adaptado para dispositivos móveis, tablets e computadores.
-[x] Filtros dinâmicos e interativos na listagem de jogadores.
-[x] Página de suporte estruturada com acordeões nativos (<details>) e tutoriais passo a passo.
-[ ] Sistema de bate-papo em tempo real entre atletas e clubes (previsto para futuras versões).
+Não precisa instalar nada: o projeto é só front-end.
+
+## Quem fez o quê
+
+| Integrante | Parte |
+|---|---|
+| Lara Ávila | Perfil de atletas, listagens e suporte |
+| Sophia Gagno | Páginas institucionais (Sobre o App) e estilização |
+| João Pedro | Conexões, formulários de contato e integração |
+
+## Status
+
+- [x] Estrutura de todas as páginas pronta e responsiva
+- [x] Navegação integrada via menu superior em todas as telas
+- [x] Filtros interativos e formulários funcionais
+- [ ] Chat avançado entre usuários (previsto para atualizações futuras)
