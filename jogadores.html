@@ -1,17 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MatchEsporte - Jogadores e Atletas</title>
-    <!-- Google Fonts -->
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
+    <script src="matchesporte.js" defer></script>
 </head>
+
 <body>
 
-    <!-- CABEÇALHO / NAVBAR -->
     <header class="navbar">
+
         <a href="home.html" class="logo-brand">
             <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="100" height="100" rx="24" fill="url(#logo-grad)"/>
@@ -23,10 +30,11 @@
                     </linearGradient>
                 </defs>
             </svg>
+
             <div class="logo">Match<span>Esporte</span></div>
         </a>
-        
-        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -34,7 +42,7 @@
 
         <nav id="nav-menu">
             <ul>
-                <li><a href="home.html" class="active">Início</a></li>
+                <li><a href="home.html">Início</a></li>
                 <li><a href="jogadores.html">Jogadores</a></li>
                 <li><a href="equipes.html">Equipes</a></li>
                 <li><a href="conexoes.html">Conexões</a></li>
@@ -43,92 +51,135 @@
                 <li><a href="contato.html" class="btn-nav">Entrar / Contato</a></li>
             </ul>
         </nav>
+
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL: JOGADORES -->
     <main class="main-content-page">
+
         <section class="page-header-section">
             <span class="badge">Talentos em Destaque</span>
+
             <h1>Atletas Prontos para o Mercado</h1>
-            <p>Descubra promessas do esporte com perfis verificados, histórico de desempenho e estatísticas em tempo real.</p>
+
+            <p>
+                Descubra promessas do esporte com perfis,
+                histórico de desempenho e estatísticas.
+            </p>
         </section>
 
-        <!-- Filtros de Pesquisa -->
         <div class="filter-bar">
-            <input type="text" id="searchInput" placeholder="Pesquisar por nome, esporte ou posição..." class="search-input">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Pesquisar por nome, esporte ou posição..."
+                class="search-input"
+            >
+
             <select id="sportSelect" class="filter-select">
                 <option value="">Todas as Modalidades</option>
                 <option value="futebol">Futebol</option>
                 <option value="basquete">Basquete</option>
                 <option value="volei">Vôlei</option>
+                <option value="futsal">Futsal</option>
+                <option value="handebol">Handebol</option>
             </select>
+
         </div>
 
-        <!-- Grid de Jogadores -->
         <div class="directory-grid" id="playersGrid">
-            <!-- Atleta 1 -->
-            <article class="directory-card" data-sport="futebol" data-text="matheus silva futebol atacante centroavante">
+
+            <article class="directory-card"
+                data-sport="futebol"
+                data-text="matheus silva futebol atacante centroavante vitória">
+
                 <div class="card-top-info">
                     <span class="status-badge active-status">Disponível</span>
                     <span class="sport-tag">Futebol</span>
                 </div>
+
                 <div class="profile-avatar-placeholder">⚽</div>
+
                 <h3>Matheus Silva</h3>
-                <p class="profile-subtitle">Atacante (Centroavante) • 19 anos</p>
+
+                <p class="profile-subtitle">
+                    Atacante (Centroavante) • 19 anos
+                </p>
+
                 <div class="profile-stats">
                     <div><span>Altura:</span> 1.82m</div>
                     <div><span>Pé Bom:</span> Destro</div>
                     <div><span>Cidade:</span> Vitória, ES</div>
                 </div>
-                <a href="conexoes.html" class="btn-primary btn-full">Solicitar Conexão</a>
+
+                <a href="conexoes.html" class="btn-primary btn-full">
+                    Solicitar Conexão
+                </a>
             </article>
 
-            <!-- Atleta 2 -->
-            <article class="directory-card" data-sport="basquete" data-text="lucas gabriel basquete armador point guard">
+            <article class="directory-card"
+                data-sport="basquete"
+                data-text="lucas gabriel basquete armador vila velha">
+
                 <div class="card-top-info">
                     <span class="status-badge active-status">Disponível</span>
                     <span class="sport-tag">Basquete</span>
                 </div>
+
                 <div class="profile-avatar-placeholder">🏀</div>
+
                 <h3>Lucas Gabriel</h3>
-                <p class="profile-subtitle">Armador (Point Guard) • 21 anos</p>
+
+                <p class="profile-subtitle">
+                    Armador (Point Guard) • 21 anos
+                </p>
+
                 <div class="profile-stats">
                     <div><span>Altura:</span> 1.90m</div>
                     <div><span>Envergadura:</span> 2.02m</div>
                     <div><span>Cidade:</span> Vila Velha, ES</div>
                 </div>
-                <a href="conexoes.html" class="btn-primary btn-full">Solicitar Conexão</a>
+
+                <a href="conexoes.html" class="btn-primary btn-full">
+                    Solicitar Conexão
+                </a>
             </article>
 
-            <!-- Atleta 3 -->
-            <article class="directory-card" data-sport="volei" data-text="carlos eduardo vôlei ponteiro oposto">
+            <article class="directory-card"
+                data-sport="volei"
+                data-text="carlos eduardo volei ponteiro oposto serra">
+
                 <div class="card-top-info">
                     <span class="status-badge active-status">Em Avaliação</span>
                     <span class="sport-tag">Vôlei</span>
                 </div>
+
                 <div class="profile-avatar-placeholder">🏐</div>
+
                 <h3>Carlos Eduardo</h3>
-                <p class="profile-subtitle">Ponteiro / Oposto • 20 anos</p>
+
+                <p class="profile-subtitle">
+                    Ponteiro / Oposto • 20 anos
+                </p>
+
                 <div class="profile-stats">
                     <div><span>Alcance:</span> 3.35m</div>
                     <div><span>Bloqueio:</span> 3.15m</div>
                     <div><span>Cidade:</span> Serra, ES</div>
                 </div>
-                <a href="conexoes.html" class="btn-primary btn-full">Solicitar Conexão</a>
+
+                <a href="conexoes.html" class="btn-primary btn-full">
+                    Solicitar Conexão
+                </a>
             </article>
+
         </div>
+
     </main>
 
-    <!-- RODAPÉ -->
     <footer class="footer">
         <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
     </footer>
-
-    <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-
+    <script src="matchesporte.js" defer></script>
 </body>
 </html>
