@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchEsporte - Entrar / Cadastrar</title>
+    <!-- Favicon / Símbolo na aba do navegador -->
+    <link rel="icon" type="image/png" href="Captura de tela 2026-10-07 155030.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <a href="home.html" class="logo-brand">
+            <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" rx="24" fill="url(#logo-grad)"/>
+                <path d="M52 20L28 54H48L44 80L72 44H52L52 20Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFA048"/>
+                        <stop offset="1" stop-color="#FF6B00"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="logo">Match<span>Esporte</span></div>
+        </a>
+        
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="jogadores.html">Jogadores</a></li>
+                <li><a href="equipes.html">Equipes</a></li>
+                <li><a href="conexoes.html">Conexões</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
+                <li><a href="sobre.html">Sobre o App</a></li>
+                <li><a href="login.html" class="btn-nav active">Entrar / Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL: LOGIN / CADASTRO -->
+    <main class="main-content-page">
+        <section class="page-header-section">
+            <span class="badge">Acesso à Plataforma</span>
+            <h1 id="auth-title">Entrar no MatchEsporte</h1>
+            <p id="auth-subtitle">Aceda à sua conta para se conectar com atletas e equipas.</p>
+        </section>
+
+        <div class="connection-container">
+            <div class="connection-card-form">
+                
+               <!-- FORMULÁRIO DE LOGIN -->
+                <form id="form-login">
+                    <div id="login-mensagem-feedback" style="display: none; padding: 12px; margin-bottom: 20px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; text-align: center;"></div>
+
+                    <div class="form-group">
+                        <label for="login-email">E-mail</label>
+                        <input type="email" id="login-email" placeholder="seu@email.com" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-senha">Senha</label>
+                        <input type="password" id="login-senha" placeholder="Sua senha" required class="search-input">
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full" style="margin-bottom: 15px;">Entrar no Site 🚀</button>
+                    
+                    <div style="text-align: center; font-size: 0.9rem; color: var(--neutral-4);">
+                        Ainda não tem conta? 
+                        <button type="button" id="to-register" style="background: none; border: none; color: var(--primary); font-weight: 700; cursor: pointer; text-decoration: underline;">Criar Conta</button>
+                    </div>
+                </form>
+
+                <!-- FORMULÁRIO DE CADASTRO -->
+                <form id="form-cadastro" style="display: none;">
+                    <div id="cadastro-mensagem-feedback" style="display: none; padding: 12px; margin-bottom: 20px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; text-align: center;"></div>
+
+                    <div class="form-group">
+                        <label for="cad-nome">Nome Completo</label>
+                        <input type="text" id="cad-nome" placeholder="Ex: João da Silva" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-email">E-mail</label>
+                        <input type="email" id="cad-email" placeholder="seu@email.com" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-senha">Senha da Conta</label>
+                        <input type="password" id="cad-senha" placeholder="Crie uma senha segura" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-endereco">Endereço</label>
+                        <input type="text" id="cad-endereco" placeholder="Ex: Rua Principal, 123 - Vitória, ES" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-telefone">Telefone / Telemóvel</label>
+                        <input type="tel" id="cad-telefone" placeholder="(27) 99999-9999" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-nascimento">Data de Nascimento</label>
+                        <input type="date" id="cad-nascimento" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-cpf">CPF</label>
+                        <input type="text" id="cad-cpf" placeholder="000.000.000-00" required class="search-input">
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full" style="margin-bottom: 15px;">Concluir Cadastro ✨</button>
+                    
+                    <div style="text-align: center; font-size: 0.9rem; color: var(--neutral-4);">
+                        Já tem uma conta? 
+                        <button type="button" id="to-login" style="background: none; border: none; color: var(--primary); font-weight: 700; cursor: pointer; text-decoration: underline;">Fazer Login</button>
+                    </div>
+                </form>
+
+                <!-- FORMULÁRIO DE CADASTRO (Oculto inicialmente) -->
+                <form id="form-cadastro" style="display: none;">
+                    <div class="form-group">
+                        <label for="cad-nome">Nome Completo</label>
+                        <input type="text" id="cad-nome" placeholder="Ex: João da Silva" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-email">E-mail</label>
+                        <input type="email" id="cad-email" placeholder="seu@email.com" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-senha">Senha da Conta</label>
+                        <input type="password" id="cad-senha" placeholder="Crie uma senha segura" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-endereco">Endereço</label>
+                        <input type="text" id="cad-endereco" placeholder="Ex: Rua Principal, 123 - Vitória, ES" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-telefone">Telefone / Telemóvel</label>
+                        <input type="tel" id="cad-telefone" placeholder="(27) 99999-9999" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-nascimento">Data de Nascimento</label>
+                        <input type="date" id="cad-nascimento" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cad-cpf">CPF</label>
+                        <input type="text" id="cad-cpf" placeholder="000.000.000-00" required class="search-input">
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full" style="margin-bottom: 15px;">Concluir Cadastro ✨</button>
+                    
+                    <div style="text-align: center; font-size: 0.9rem; color: var(--neutral-4);">
+                        Já tem uma conta? 
+                        <button type="button" id="to-login" style="background: none; border: none; color: var(--primary); font-weight: 700; cursor: pointer; text-decoration: underline;">Fazer Login</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="matchesporte.js" defer></script>
+</body>
+</html>
