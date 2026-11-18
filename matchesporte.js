@@ -1,117 +1,305 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-    inicializarMenuMobile();
-    destacarMenuAtivo();
-    inicializarFiltrosDiretorio();
-    inicializarFormularioConexao();
+    iniciarMenu();
+    destacarPaginaAtual();
+    adicionarAtletas();
+    iniciarFiltros();
+    iniciarFormularioConexao();
 });
 
-function inicializarMenuMobile() {
-    const botoesMenu = document.querySelectorAll(".menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
+// MENU MOBILE
+function iniciarMenu() {
+    const botao = document.querySelector(".menu-toggle");
+    const menu = document.getElementById("nav-menu");
 
-    if (!botoesMenu.length || !navMenu) return;
+    if (!botao || !menu) return;
 
-    botoesMenu.forEach(botao => {
-        botao.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-            botao.classList.toggle("active");
-        });
+    botao.addEventListener("click", () => {
+        const aberto = menu.classList.toggle("active");
+
+        botao.classList.toggle("active", aberto);
+        botao.setAttribute("aria-expanded", aberto);
     });
 
-    
-    const linksNav = navMenu.querySelectorAll("a");
-    linksNav.forEach(link => {
+    menu.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
-            navMenu.classList.remove("active");
-            botoesMenu.forEach(b => b.classList.remove("active"));
+            menu.classList.remove("active");
+            botao.classList.remove("active");
+            botao.setAttribute("aria-expanded", "false");
         });
     });
 }
 
-function destacarMenuAtivo() {
-    const caminhoAtual = window.location.pathname.split("/").pop() || "home.html";
-    const linksMenu = document.querySelectorAll("nav a");
+// DESTACAR A PÁGINA ATUAL NO MENU
+function destacarPaginaAtual() {
+    const paginaAtual =
+        window.location.pathname.split("/").pop() || "home.html";
 
-    linksMenu.forEach(link => {
-        const href = link.getAttribute("href");
-        if (href === caminhoAtual) {
-            link.classList.add("active");
-        } else {
-            link.classList.remove("active");
-        }
+    document.querySelectorAll("#nav-menu a").forEach(link => {
+        const destino = link.getAttribute("href");
+
+        link.classList.toggle("active", destino === paginaAtual);
     });
 }
 
-function inicializarFiltrosDiretorio() {
-    const inputPesquisa = document.getElementById("searchInput");
-    const selectEsporte = document.getElementById("sportSelect");
-    const cards = document.querySelectorAll(".directory-card");
+// LISTA DE NOVOS ATLETAS
+const novosAtletas = [
+    {
+        nome: "Ana Clara Souza",
+        esporte: "Vôlei",
+        posicao: "Levantadora",
+        idade: 19,
+        altura: "1.75m",
+        cidade: "Vitória, ES",
+        icone: "🏐"
+    },
+    {
+        nome: "Pedro Henrique",
+        esporte: "Futebol",
+        posicao: "Goleiro",
+        idade: 20,
+        altura: "1.88m",
+        cidade: "Vila Velha, ES",
+        icone: "⚽"
+    },
+    {
+        nome: "Mariana Costa",
+        esporte: "Basquete",
+        posicao: "Ala",
+        idade: 21,
+        altura: "1.78m",
+        cidade: "Serra, ES",
+        icone: "🏀"
+    },
+    {
+        nome: "Gabriel Santos",
+        esporte: "Futebol",
+        posicao: "Meio-campista",
+        idade: 22,
+        altura: "1.80m",
+        cidade: "Cariacica, ES",
+        icone: "⚽"
+    },
+    {
+        nome: "Beatriz Oliveira",
+        esporte: "Vôlei",
+        posicao: "Líbero",
+        idade: 20,
+        altura: "1.68m",
+        cidade: "Vila Velha, ES",
+        icone: "🏐"
+    },
+    {
+        nome: "Rafael Mendes",
+        esporte: "Futsal",
+        posicao: "Ala",
+        idade: 19,
+        altura: "1.76m",
+        cidade: "Vitória, ES",
+        icone: "🥅"
+    },
+    {
+        nome: "Isabela Ferreira",
+        esporte: "Basquete",
+        posicao: "Armadora",
+        idade: 22,
+        altura: "1.72m",
+        cidade: "Serra, ES",
+        icone: "🏀"
+    },
+    {
+        nome: "João Pedro Alves",
+        esporte: "Futebol",
+        posicao: "Zagueiro",
+        idade: 21,
+        altura: "1.84m",
+        cidade: "Cariacica, ES",
+        icone: "⚽"
+    },
+    {
+        nome: "Camila Rodrigues",
+        esporte: "Handebol",
+        posicao: "Ponta",
+        idade: 20,
+        altura: "1.70m",
+        cidade: "Vitória, ES",
+        icone: "🤾"
+    }
+];
 
-    if (!cards.length) return;
+// ADICIONAR ATLETAS NA PÁGINA
+function adicionarAtletas() {
+    const grade = document.getElementById("playersGrid");
 
-    function filtrar() {
-        const termoPesquisa = inputPesquisa ? inputPesquisa.value.toLowerCase().trim() : "";
-        const esporteSelecionado = selectEsporte ? selectEsporte.value.toLowerCase() : "";
+    if (!grade) return;
+
+    novosAtletas.forEach(atleta => {
+        const card = document.createElement("article");
+
+        card.className = "directory-card";
+        card.dataset.sport = atleta.esporte;
+        card.dataset.text = `
+            ${atleta.nome}
+            ${atleta.esporte}
+            ${atleta.posicao}
+            ${atleta.cidade}
+        `;
+
+        card.innerHTML = `
+            <div class="card-top-info">
+                <span class="status-badge active-status">
+                    Disponível
+                </span>
+
+                <span class="sport-tag">
+                    ${atleta.esporte}
+                </span>
+            </div>
+
+            <div class="profile-avatar-placeholder">
+                ${atleta.icone}
+            </div>
+
+            <h3>${atleta.nome}</h3>
+
+            <p class="profile-subtitle">
+                ${atleta.posicao} • ${atleta.idade} anos
+            </p>
+
+            <div class="profile-stats">
+                <div><span>Altura:</span> ${atleta.altura}</div>
+                <div><span>Modalidade:</span> ${atleta.esporte}</div>
+                <div><span>Cidade:</span> ${atleta.cidade}</div>
+            </div>
+
+            <a href="conexoes.html" class="btn-primary btn-full">
+                Solicitar Conexão
+            </a>
+
+            <small>Perfil demonstrativo</small>
+        `;
+
+        grade.appendChild(card);
+    });
+}
+
+// NORMALIZAR TEXTO PARA PESQUISA
+function normalizarTexto(texto) {
+    return texto
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+}
+
+// PESQUISA E FILTRO DE ATLETAS
+function iniciarFiltros() {
+    const pesquisa = document.getElementById("searchInput");
+    const filtro = document.getElementById("sportSelect");
+    const grade = document.getElementById("playersGrid");
+
+    if (!grade) return;
+
+    function filtrarAtletas() {
+        const termo = normalizarTexto(pesquisa?.value || "");
+        const esporte = normalizarTexto(filtro?.value || "");
+
+        const cards = grade.querySelectorAll(".directory-card");
+        let quantidadeEncontrada = 0;
 
         cards.forEach(card => {
-            const dataText = card.getAttribute("data-text") || "";
-            const conteudoCard = card.textContent.toLowerCase();
-            const tagEsporte = card.querySelector(".sport-tag")?.textContent.toLowerCase() || "";
+            const texto = normalizarTexto(
+                (card.dataset.text || "") + " " + card.textContent
+            );
 
-            const correspondeTexto = !termoPesquisa || dataText.includes(termoPesquisa) || conteudoCard.includes(termoPesquisa);
-            const correspondeEsporte = !esporteSelecionado || tagEsporte.includes(esporteSelecionado);
+            const modalidade = normalizarTexto(
+                card.dataset.sport ||
+                card.querySelector(".sport-tag")?.textContent ||
+                ""
+            );
 
-            if (correspondeTexto && correspondeEsporte) {
-                card.style.display = "";
-            } else {
-                card.style.display = "none";
+            const combinaPesquisa = texto.includes(termo);
+            const combinaEsporte =
+                !esporte || modalidade.includes(esporte);
+
+            const mostrar = combinaPesquisa && combinaEsporte;
+
+            card.style.display = mostrar ? "" : "none";
+
+            if (mostrar) {
+                quantidadeEncontrada++;
             }
         });
+
+        let aviso = document.getElementById("nenhumAtleta");
+
+        if (!aviso) {
+            aviso = document.createElement("p");
+            aviso.id = "nenhumAtleta";
+            aviso.textContent = "Nenhum atleta encontrado.";
+            aviso.style.textAlign = "center";
+            aviso.style.padding = "20px";
+            grade.after(aviso);
+        }
+
+        aviso.style.display =
+            quantidadeEncontrada === 0 ? "block" : "none";
     }
 
-    if (inputPesquisa) {
-        inputPesquisa.addEventListener("input", filtrar);
-    }
-
-    if (selectEsporte) {
-        selectEsporte.addEventListener("change", filtrar);
-    }
+    pesquisa?.addEventListener("input", filtrarAtletas);
+    filtro?.addEventListener("change", filtrarAtletas);
 }
 
-function inicializarFormularioConexao() {
-    const formConexao = document.querySelector(".connection-card-form form");
-    if (!formConexao) return;
+// FORMULÁRIO DE CONEXÃO
+function iniciarFormularioConexao() {
+    const formulario = document.querySelector(
+        ".connection-card-form form"
+    );
 
-    formConexao.addEventListener("submit", (e) => {
-        e.preventDefault();
+    if (!formulario) return;
+
+    formulario.addEventListener("submit", event => {
+        event.preventDefault();
 
         const nome = document.getElementById("seu-nome")?.value.trim();
-        const tipoPerfil = document.getElementById("tipo-perfil")?.value;
-        const destinatario = document.getElementById("destinatario")?.value.trim();
-        const mensagem = document.getElementById("mensagem")?.value.trim();
+        const tipo = document.getElementById("tipo-perfil")?.value;
+        const destinatario =
+            document.getElementById("destinatario")?.value.trim();
+        const mensagem =
+            document.getElementById("mensagem")?.value.trim();
 
-        if (!nome || !destinatario || !mensagem) {
-            alert("Por favor, preencha todos os campos obrigatórios.");
+        if (!nome || !tipo || !destinatario || !mensagem) {
+            alert("Preencha todos os campos antes de enviar.");
             return;
         }
 
         const novaConexao = {
-            nome,
-            tipoPerfil,
-            destinatario,
-            mensagem,
-            data: new Date().toLocaleDateString("pt-BR")
+            nome: nome,
+            tipoPerfil: tipo,
+            destinatario: destinatario,
+            mensagem: mensagem,
+            data: new Date().toLocaleString("pt-BR")
         };
 
-        salvarConexaoNoStorage(novaConexao);
+        let historico = [];
 
-        alert(`Solicitação enviada com sucesso para ${destinatario}! O clube ou atleta responderá em breve.`);
-        formConexao.reset();
+        try {
+            historico = JSON.parse(
+                localStorage.getItem("matchEsporte_historicoConexoes")
+            ) || [];
+        } catch (erro) {
+            historico = [];
+        }
+
+        historico.push(novaConexao);
+
+        localStorage.setItem(
+            "matchEsporte_historicoConexoes",
+            JSON.stringify(historico)
+        );
+
+        alert("Solicitação registrada com sucesso!");
+
+        formulario.reset();
     });
 }
-
-function salvarConexaoNoStorage(conexao) {
-    let historico = JSON.parse(localStorage.getItem("matchEsporte_historicoConexoes")) || [];
-    historico.push(conexao);
-    localStorage.setItem("matchEsporte_historicoConexoes", JSON.stringify(historico));
-}    
