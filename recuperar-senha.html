@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchEsporte - Recuperar e Confirmar Senha</title>
+    <link rel="icon" type="image/png" href="Captura de tela 2026-10-07 155030.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <a href="home.html" class="logo-brand">
+            <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" rx="24" fill="url(#logo-grad)"/>
+                <path d="M52 20L28 54H48L44 80L72 44H52L52 20Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFA048"/>
+                        <stop offset="1" stop-color="#FF6B00"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="logo">Match<span>Esporte</span></div>
+        </a>
+        
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="jogadores.html">Jogadores</a></li>
+                <li><a href="equipes.html">Equipes</a></li>
+                <li><a href="conexoes.html">Conexões</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
+                <li><a href="sobre.html">Sobre o App</a></li>
+                <li><a href="index.html" class="btn-nav">Voltar ao Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content-page">
+        <section class="page-header-section">
+            <span class="badge">Segurança da Conta</span>
+            <h1 id="rec-title">Recuperar Senha</h1>
+            <p id="rec-subtitle">Insira o e-mail e o CPF utilizados no seu cadastro para confirmar sua identidade.</p>
+        </section>
+
+        <div class="connection-container">
+            <div class="connection-card-form">
+                <div id="rec-mensagem-feedback" style="display: none; padding: 12px; margin-bottom: 20px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; text-align: center;"></div>
+
+                <!-- ETAPA 1: INFORMAÇÕES DE CONFIRMAÇÃO (E-mail e CPF) -->
+                <form id="form-verificar-conta">
+                    <div class="form-group">
+                        <label for="rec-email">E-mail utilizado no login</label>
+                        <input type="email" id="rec-email" placeholder="seu@email.com" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rec-cpf">CPF Cadastrado (Confirmação de Segurança)</label>
+                        <input type="text" id="rec-cpf" placeholder="000.000.000-00" required class="search-input">
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full" style="margin-bottom: 15px;">
+                        Verificar Conta 🔍
+                    </button>
+
+                    <div style="text-align: center; font-size: 0.9rem; color: var(--neutral-4);">
+                        Lembrou a senha? 
+                        <a href="index.html" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Voltar para o Login</a>
+                    </div>
+                </form>
+
+                <!-- ETAPA 2: NOVA SENHA -->
+                <form id="form-confirmar-senha" style="display: none;">
+                    <div style="background: var(--bg-main); border: 1px solid var(--neutral-3); padding: 14px; border-radius: 10px; margin-bottom: 20px; text-align: center;">
+                        <p style="font-size: 0.85rem; color: var(--neutral-4);">Identidade confirmada para:</p>
+                        <strong id="rec-nome-usuario" style="color: var(--neutral-5); font-size: 1.05rem;">Usuário</strong>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rec-nova-senha">Nova Senha</label>
+                        <input type="password" id="rec-nova-senha" placeholder="Digite a nova senha" required class="search-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rec-confirma-senha">Confirmar Nova Senha</label>
+                        <input type="password" id="rec-confirma-senha" placeholder="Repita a nova senha" required class="search-input">
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full" style="margin-bottom: 15px;">
+                        Confirmar Alteração de Senha ✅
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>&copy; 2026 MatchEsporte. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="matchesporte.js" defer></script>
+</body>
+</html>
