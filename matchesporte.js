@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     iniciarFiltros();
     iniciarFormularioConexao();
     iniciarAutenticacao();
+    iniciarRecuperacaoSenha();
 });
 
 // =========================================================================
@@ -16,7 +17,7 @@ function protegerPaginas() {
     const caminhoCompleto = window.location.pathname;
     const paginaAtual = caminhoCompleto.split("/").pop() || "index.html";
     
-    const paginasPublicas = ["index.html", "contato.html"];
+    const paginasPublicas = ["index.html", "contato.html", "recuperar-senha.html"];
     const estaLogado = sessionStorage.getItem("matchEsporte_usuarioLogado");
 
     // Se não estiver logado, redireciona instantaneamente para o index.html sem exibir caixas de alerta
@@ -315,6 +316,80 @@ function iniciarAutenticacao() {
             }, 1000);
         } else {
             mostrarFeedback("login-mensagem-feedback", "❌ Utilizador não encontrado ou senha incorreta. Verifique os seus dados.", "erro");
+        }
+    });
+}
+
+// =========================================================================
+// RECUPERAÇÃO DE SENHA
+// =========================================================================
+function iniciarRecuperacaoSenha() {
+    const formVerificar = document.getElementById("form-verificar-conta");
+    const formConfirmar = document.getElementById("form-confirmar-senha");
+    const recTitle = document.getElementById("rec-title");
+    const recSubtitle = document.getElementById("rec-subtitle");
+    const nomeUsuarioDisplay = document.getElementById("rec-nome-usuario");
+
+    if (!formVerificar || !formConfirmar) return;
+
+    let indiceUsuarioEncontrado = -1;
+
+    formVerificar.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("rec-email").value.trim().toLowerCase();
+        const cpfDigitado = document.getElementById("rec-cpf").value.replace(/\D/g, "");
+
+        let usuarios = [];
+        try {
+            usuarios = JSON.parse(localStorage.getItem("matchEsporte_usuarios")) || [];
+        } catch (err) {
+            usuarios = [];
+        }
+
+        indiceUsuarioEncontrado = usuarios.findIndex(u => {
+            const cpfSalvo = (u.cpf || "").replace(/\D/g, "");
+            return u.email.toLowerCase() === email && cpfSalvo === cpfDigitado;
+        });
+
+        if (indiceUsuarioEncontrado === -1) {
+            mostrarFeedback("rec-mensagem-feedback", "❌ E-mail ou CPF não conferem com nenhuma conta cadastrada.", "erro");
+            return;
+        }
+
+        document.getElementById("rec-mensagem-feedback").style.display = "none";
+        formVerificar.style.display = "none";
+        formConfirmar.style.display = "block";
+        recTitle.textContent = "Confirmar Nova Senha";
+        recSubtitle.textContent = "Identidade validada! Digite e confirme sua nova senha abaixo.";
+        nomeUsuarioDisplay.textContent = `${usuarios[indiceUsuarioEncontrado].nome} (${usuarios[indiceUsuarioEncontrado].email})`;
+    });
+
+    formConfirmar.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const novaSenha = document.getElementById("rec-nova-senha").value.trim();
+        const confirmaSenha = document.getElementById("rec-confirma-senha").value.trim();
+
+        if (novaSenha.length < 4) {
+            mostrarFeedback("rec-mensagem-feedback", "⚠️ A nova senha deve ter pelo menos 4 caracteres.", "erro");
+            return;
+        }
+
+        if (novaSenha !== confirmaSenha) {
+            mostrarFeedback("rec-mensagem-feedback", "❌ As senhas digitadas não são iguais. Tente novamente.", "erro");
+            return;
+        }
+
+        let usuarios = JSON.parse(localStorage.getItem("matchEsporte_usuarios")) || [];
+        if (indiceUsuarioEncontrado !== -1 && usuarios[indiceUsuarioEncontrado]) {
+            usuarios[indiceUsuarioEncontrado].senha = novaSenha;
+            localStorage.setItem("matchEsporte_usuarios", JSON.stringify(usuarios));
+
+            mostrarFeedback("rec-mensagem-feedback", "✅ Senha alterada e confirmada com sucesso! Redirecionando para o login...", "sucesso");
+            formConfirmar.reset();
+
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 1800);
         }
     });
 }

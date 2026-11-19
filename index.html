@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MatchEsporte - Entrar / Cadastrar</title>
-    <!-- Favicon / Símbolo na aba do navegador -->
     <link rel="icon" type="image/png" href="Captura de tela 2026-10-07 155030.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -41,7 +40,7 @@
                 <li><a href="conexoes.html">Conexões</a></li>
                 <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobre.html">Sobre o App</a></li>
-                <li><a href="login.html" class="btn-nav active">Entrar / Contato</a></li>
+                <li><a href="index.html" class="btn-nav active">Entrar / Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -57,7 +56,7 @@
         <div class="connection-container">
             <div class="connection-card-form">
                 
-               <!-- FORMULÁRIO DE LOGIN -->
+                <!-- FORMULÁRIO DE LOGIN -->
                 <form id="form-login">
                     <div id="login-mensagem-feedback" style="display: none; padding: 12px; margin-bottom: 20px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; text-align: center;"></div>
 
@@ -66,9 +65,15 @@
                         <input type="email" id="login-email" placeholder="seu@email.com" required class="search-input">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 6px;">
                         <label for="login-senha">Senha</label>
                         <input type="password" id="login-senha" placeholder="Sua senha" required class="search-input">
+                    </div>
+
+                    <!-- LINK ESQUECI MINHA SENHA -->
+                    <div style="text-align: right; margin-bottom: 20px;">
+                        <a href="recuperar-senha.html">Esqueci minha senha
+                        </a>
                     </div>
 
                     <button type="submit" class="btn-primary btn-full" style="margin-bottom: 15px;">Entrar no Site 🚀</button>
@@ -83,51 +88,6 @@
                 <form id="form-cadastro" style="display: none;">
                     <div id="cadastro-mensagem-feedback" style="display: none; padding: 12px; margin-bottom: 20px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; text-align: center;"></div>
 
-                    <div class="form-group">
-                        <label for="cad-nome">Nome Completo</label>
-                        <input type="text" id="cad-nome" placeholder="Ex: João da Silva" required class="search-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cad-email">E-mail</label>
-                        <input type="email" id="cad-email" placeholder="seu@email.com" required class="search-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cad-senha">Senha da Conta</label>
-                        <input type="password" id="cad-senha" placeholder="Crie uma senha segura" required class="search-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cad-endereco">Endereço</label>
-                        <input type="text" id="cad-endereco" placeholder="Ex: Rua Principal, 123 - Vitória, ES" required class="search-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cad-telefone">Telefone / Telemóvel</label>
-                        <input type="tel" id="cad-telefone" placeholder="(27) 99999-9999" required class="search-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cad-nascimento">Data de Nascimento</label>
-                        <input type="date" id="cad-nascimento" required class="search-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cad-cpf">CPF</label>
-                        <input type="text" id="cad-cpf" placeholder="000.000.000-00" required class="search-input">
-                    </div>
-
-                    <button type="submit" class="btn-primary btn-full" style="margin-bottom: 15px;">Concluir Cadastro ✨</button>
-                    
-                    <div style="text-align: center; font-size: 0.9rem; color: var(--neutral-4);">
-                        Já tem uma conta? 
-                        <button type="button" id="to-login" style="background: none; border: none; color: var(--primary); font-weight: 700; cursor: pointer; text-decoration: underline;">Fazer Login</button>
-                    </div>
-                </form>
-
-                <!-- FORMULÁRIO DE CADASTRO (Oculto inicialmente) -->
-                <form id="form-cadastro" style="display: none;">
                     <div class="form-group">
                         <label for="cad-nome">Nome Completo</label>
                         <input type="text" id="cad-nome" placeholder="Ex: João da Silva" required class="search-input">
