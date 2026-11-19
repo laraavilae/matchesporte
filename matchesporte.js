@@ -28,23 +28,38 @@ function protegerPaginas() {
 
 // MENU MOBILE
 function iniciarMenu() {
-    const botao = document.querySelector(".menu-toggle");
+    const botao = document.getElementById("mobile-menu-btn") || document.querySelector(".menu-toggle");
     const menu = document.getElementById("nav-menu");
 
     if (!botao || !menu) return;
 
-    botao.addEventListener("click", () => {
+    // Clona o botão para remover qualquer evento duplicado que possa existir
+    const novoBotao = botao.cloneNode(true);
+    botao.parentNode.replaceChild(novoBotao, botao);
+
+    novoBotao.addEventListener("click", (e) => {
+        e.stopPropagation();
         const aberto = menu.classList.toggle("active");
-        botao.classList.toggle("active", aberto);
-        botao.setAttribute("aria-expanded", aberto);
+        novoBotao.classList.toggle("active", aberto);
+        novoBotao.setAttribute("aria-expanded", aberto);
     });
 
+    // Fecha o menu ao clicar em qualquer link
     menu.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
             menu.classList.remove("active");
-            botao.classList.remove("active");
-            botao.setAttribute("aria-expanded", "false");
+            novoBotao.classList.remove("active");
+            novoBotao.setAttribute("aria-expanded", "false");
         });
+    });
+
+    // Fecha o menu se clicar fora dele na tela
+    document.addEventListener("click", (e) => {
+        if (menu.classList.contains("active") && !menu.contains(e.target) && !novoBotao.contains(e.target)) {
+            menu.classList.remove("active");
+            novoBotao.classList.remove("active");
+            novoBotao.setAttribute("aria-expanded", "false");
+        }
     });
 }
 

@@ -813,9 +813,18 @@ body {
 .footer {
     text-align: center;
     padding: 40px 20px;
-    background-color: var(--secondary);
-    color: var(--neutral-4);
+    background-color: #1E293B; /* Cinza/azul bem escuro */
+    color: #CBD5E1;            /* Texto claro e de alta legibilidade */
     font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--primary);     /* Deixa o link da central de suporte em destaque bonito */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
 
 /* ==========================================================================
